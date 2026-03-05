@@ -1,14 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
+import React from "react";
 
 export const metadata = {
   title: "CineInsight",
@@ -23,7 +14,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${geist.variable} ${geistMono.variable}`}>
+      <body>
         {children}
       </body>
     </html>
