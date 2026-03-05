@@ -118,7 +118,7 @@ Respond ONLY in this JSON format, no extra text:
         reviews,
         sentimentSummary
       }),
-      { status: 200 }
+      { status: 200, headers: { "Content-Type": "application/json" }}
     );
 
   } catch (err) {

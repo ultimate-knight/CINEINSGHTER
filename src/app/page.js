@@ -9,7 +9,7 @@ export default function Home() {
   
   
 
-  const handleSubmit=async (e)=>{
+  const handleSubmit=async ()=>{
      try {
       // Fetch movie details from API
     const res = await fetch(`/api/movie?imdbId=${imdb}`)
@@ -42,9 +42,13 @@ export default function Home() {
           
           <div className="flex  relative flex-row w-full  items-center  justify-center mt-7 gap-3">
             
-                <input value={imdb} onChange={(e)=>setImdb(e.target.value)} className="py-5 pl-15 max-[500px]:text-lg max-[500px]:pl-10   min-w-0 overflow-x-hidden  flex-1 text-2xl bg-gray-600 rounded-lg text-gray-300" placeholder="tt0133093"/>
+                <input value={imdb} onKeyDown={(e) => {
+    if (e.key === "Enter" && imdb.trim()) {
+      handleSubmit();
+    }
+  }} onChange={(e)=>setImdb(e.target.value)} className="py-5 pl-15 max-[500px]:text-lg max-[500px]:pl-10   min-w-0 overflow-x-hidden  flex-1 text-2xl bg-gray-600 rounded-lg text-gray-300" placeholder="tt0133093"/>
                 <SearchIcon className="absolute text-gray-400 left-3 max-[500px]:w-6 w-8 h-auto"/>
-                <button onClick={handleSubmit} className="py-6 w-33 max-md:px-2 text-center    text-black text-center font-bold bg-gradient-to-r from-yellow-300 to-yellow-600 cursor-pointer rounded-md ">Analyze</button>
+                <button onClick={handleSubmit}  className="py-6 w-33 max-md:px-2 text-center    text-black text-center font-bold bg-gradient-to-r from-yellow-300 to-yellow-600 cursor-pointer rounded-md ">Analyze</button>
                 
           </div>
           
