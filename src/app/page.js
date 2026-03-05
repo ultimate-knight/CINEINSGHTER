@@ -28,7 +28,7 @@ export default function Home() {
   }
   }
   return (
-    <div className="flex flex-col font-poppins tracking-wide min-h-screen p-5 mt-10 overflow-x-hidden  items-center text-white   justify-center font-serif">
+    <div className="flex flex-col font-poppins tracking-wide min-h-screen p-5  overflow-x-hidden  items-center text-white   justify-center font-serif">
       
       <div className="flex flex-row gap-3">
       <img src="/video-player.png" className="w-8 h-8"/>
